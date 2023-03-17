@@ -1,0 +1,23 @@
+backend tools:
+
+nodemon :-refresh node automatically every time we save, and must installed globally;
+express :framework;
+body-parser : to process the request body; 
+bcrypt : for password encryption;
+cors : for cross origin request platform;
+dotenv : for environment variables;
+gridfs-stream : for file upload;
+multer multer-gridfs-storage : for uploading file locally;
+helmet : for request safety;
+morgan : for login;
+jsonwebtoken : for authentication;
+mongoose : for mongodb access;
+
+
+
+some tips::=>
+under package.json we can write "type":"module";  so that we can use import statement instead of require;
+
+
+
+
