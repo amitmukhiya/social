@@ -1,6 +1,10 @@
-.App {
-  text-align: center;
-  background-color: #282c34;
+* {
+  /* text-align: center; */
+  color: white;
+  /* background-color: #0b0101; */
+}
+hr{
+  color: white;
 }
 
 .App-logo {
