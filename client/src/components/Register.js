@@ -14,16 +14,16 @@ export default function Register() {
       console.log("password did not match!");
     } else {
       try {
-        const data = {
-          FirstName: FirstName,
-          LastName: LastName,
-          Email: Email,
-          Password: Password,
-          PasswordConfirm: PasswordConfirm,
-        };
+        
         // console.log(data);
         await axios
-          .post("http://localhost:8080/api/register", { data })
+          .post("http://localhost:8080/api/register",{
+            FirstName: FirstName,
+            LastName: LastName,
+            Email: Email,
+            Password: Password,
+            PasswordConfirm: PasswordConfirm,
+          })
           .then((res) => {
             console.log(res);
           })

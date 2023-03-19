@@ -5,10 +5,9 @@ const bcrypt = require("bcrypt");
 //REGISTER
 router.post("/register", async (req, res) => {
   try {
-    const { FirstName, LastName, Email, Password, PasswordConfirm } =
-      req.body.data;
-    // console.log(req.body);
-    // console.log(FirstName, LastName, Email, Password, PasswordConfirm);
+    const { FirstName, LastName, Email, Password, PasswordConfirm } = req.body;
+    console.log(req.body);
+    console.log(FirstName, LastName, Email, Password, PasswordConfirm);
     // generate new password
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
@@ -36,12 +35,12 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const user = await User.findOne({ email: req.body.email });
+    const { email, password } = req.body;
+    console.log(req.body);
+    const user = await User.findOne({ email: email });
     if (!user) {
       res.status(404).json("user not found");
-    } else if (
-      (await bcrypt.compare(req.body.password, user.password)) == false
-    )
+    } else if ((await bcrypt.compare(password, user.password)) == false)
       res.status(400).json("wrong password");
     else {
       res.status(200).json(user);
